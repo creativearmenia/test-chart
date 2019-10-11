@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-test
+  labels:
+    app.kubernetes.io/name: "testingress"
+spec:
+  rules:
+    - host: testdomain.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: test-service
+              servicePort: 80
